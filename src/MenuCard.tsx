@@ -9,14 +9,17 @@ const MenuCard: React.FC<{ item: MenuItem }> = ({ item }) => {
       style={{
         border: "1px solid #ddd",
         borderRadius: "12px",
+        boxSizing: "border-box", // 패딩/보더 포함해서 폭 계산
         padding: "16px",
         marginBottom: "15px",
         boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
         cursor: "pointer",
         textAlign: "center",
         transition: "0.3s",
-        width: "400px", // 폭 고정
-        maxWidth: "100%", // 화면이 좁으면 반응형
+        // width: "400px", // 폭 고정
+        // maxWidth: "100%", // 화면이 좁으면 반응형
+        width: "100%", // 화면에 맞춰 늘어남
+        maxWidth: "400px", // 최대 폭 고정
       }}
       onClick={() => setOpen(!open)}
     >

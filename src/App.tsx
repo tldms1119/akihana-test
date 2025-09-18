@@ -152,9 +152,12 @@ export default function App() {
           flexGrow: 1,
           overflowY: "auto",
           padding: "10px",
+          display: "flex",
+          justifyContent: "center",
+          // flexDirection: "column",
         }}
       >
-        <ul style={{ listStyle: "none", padding: 0, maxWidth: "600px" }}>
+        <ul style={{ listStyle: "none", padding: 0 }}>
           {filtered.map((item, index) => (
             <li key={index}>
               <MenuCard item={item} />
