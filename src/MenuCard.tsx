@@ -15,7 +15,8 @@ const MenuCard: React.FC<{ item: MenuItem }> = ({ item }) => {
         cursor: "pointer",
         textAlign: "center",
         transition: "0.3s",
-        width: "400px",
+        width: "400px", // 폭 고정
+        maxWidth: "100%", // 화면이 좁으면 반응형
       }}
       onClick={() => setOpen(!open)}
     >
@@ -24,7 +25,12 @@ const MenuCard: React.FC<{ item: MenuItem }> = ({ item }) => {
 
       {/* 클릭했을 때만 보이는 상세 */}
       {open && (
-        <div style={{ marginTop: "12px", textAlign: "left" }}>
+        <div
+          style={{
+            marginTop: "12px",
+            textAlign: "left",
+          }}
+        >
           <div
             style={{
               display: "flex",

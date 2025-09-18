@@ -63,6 +63,7 @@ export default function App() {
             alignItems: "center",
             gap: "10px",
             marginBottom: "10px",
+            flexWrap: "wrap", // 화면 좁으면 요소들이 아래로 내려감
           }}
         >
           <h2 style={{ margin: 0 }}>🍣 Sushi Menu</h2>
@@ -96,14 +97,15 @@ export default function App() {
           </select>
           <input
             type="text"
-            placeholder="Search ingredient, name, sauce..."
+            placeholder="ingredient, name, sauce..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             style={{
               padding: "8px",
               fontSize: "16px",
               flex: 1, // 남는 공간 다 차지
-              minWidth: "400px",
+              width: "100%", // 화면 폭 따라 늘어남
+              maxWidth: "600px", // 너무 넓어지지 않게 제한
             }}
           />
         </div>
@@ -152,7 +154,7 @@ export default function App() {
           padding: "10px",
         }}
       >
-        <ul style={{ listStyle: "none", padding: 0 }}>
+        <ul style={{ listStyle: "none", padding: 0, maxWidth: "600px" }}>
           {filtered.map((item, index) => (
             <li key={index}>
               <MenuCard item={item} />
